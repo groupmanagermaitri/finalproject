@@ -690,4 +690,114 @@ void main()
 	getch();
 }return 0;
 }
-
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	char ch;
+	int i;
+	for(i=1; i<255; i++)
+	{
+		ch=i;
+		cout<<i<<"-> "<<ch<<"\t";
+	}
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a=0, b=1, c=0, limit;
+	cout<<"Upto How many term ? ";
+	cin>>limit;
+	cout<<"Fabonacci Series : "<<a<<" "<<b<<" ";  // first two term
+	c=a+b;
+	limit=limit-2;   // decrease the limit by 2. since two numbers already printed
+	while(limit)
+	{
+		cout<<c<<" ";
+		a=b;
+		b=c;
+		c=a+b;
+		limit--;
+	}
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int num1, num2, i, n, rem, temp, count=0;
+	//enter the interval (enter the two number)
+	cout<<"Enter Starting Number : ";
+	cin>>num1;
+	cout<<"Enter Ending Number : ";
+	cin>>num2;
+	for(i=num1+1; i<num2; i++)
+	{
+		temp=i;
+		n=0;
+		while(temp!=0)
+		{
+			rem=temp%10;
+			n = n + rem*rem*rem;
+			temp=temp/10;
+		}
+		if(i==n)
+		{
+			if(count==0)
+			{
+				cout<<"Armstrong numbers between the given interval are : \n";
+			}
+			cout<<i<<" ";
+			count++;
+		}
+	}}
+	if(count==0)
+	{
+		cout<<"Armstrong number not found between the given interval";
+	}
+	getch();
+}
+return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	float cen, fah;
+	cout<<"Enter temperature in Celsius : ";
+	cin>>cen;
+	fah=(1.8 * cen) + 32;
+	cout<<"\nTemperature in Fahrenheit = "<<fah;
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	long int decnum, rem, quot;
+	int binnum[100], i=1, j;
+	cout<<"Enter any decimal number : ";
+	cin>>decnum;
+	quot=decnum;
+	while(quot!=0)
+	{
+		binnum[i++]=quot%2;
+		quot=quot/2;
+	}
+	cout<<"Equivalent binary value of "<<decnum<<" :\n";
+	for(j=i-1; j>0; j--)
+	{
+		cout<<binnum[j];
+	}
+	getch();
+}

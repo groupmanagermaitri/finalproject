@@ -395,4 +395,94 @@ void main()
 	}
 	cout<<"Reverse = "<<rev;
 	getch();
+
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a, b, temp;
+	cout<<"Enter value of A and B : \n";
+	cout<<"A = ";
+	cin>>a;
+	cout<<"B = ";
+	cin>>b;
+	temp=a;
+	a=b;
+	b=temp;
+	cout<<"Number interchanged successfully..!!\n";
+	cout<<"A = "<<a<<"\n"<<"B = "<<b;
+	getch();
+}return 0;}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int countp=0, countn=0, countz=0, arr[10], i;
+	cout<<"Enter 10 numbers : ";
+	for(i=0; i<10; i++)
+	{
+		cin>>arr[i];
+	}
+	for(i=0; i<10; i++)
+	{
+		if(arr[i]<0)
+		{
+			countn++;
+		}else if(arr[i]==0)
+		{
+			countz++;
+		}
+		else
+		{
+			countp++;
+		}
+	}
+	cout<<"Positive Numbers = "<<countp<<"\n";
+	cout<<"Negative Numbers = "<<countn<<"\n";
+	cout<<"Zero = "<<countz<<"\n";
+	getch();
+}
+return 0
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a, b, c, big;
+	cout<<"Enter three numbers : ";
+	cin>>a>>b>>c;
+	//let a is the biggest
+	big=a;
+	if(big<b)
+	{
+		if(b>c)
+		{
+			big=b;
+		}
+		else
+		{
+			big=c;
+		}
+	}
+	else if(big<c)
+	{
+		if(c>b)
+		{
+			big=c;
+		}
+		else
+		{
+			big=b;
+		}
+	}else
+	{
+		big=a;
+	}
+	cout<<"Biggest number is "<<big;
+	getch();
+}return 0;
 }

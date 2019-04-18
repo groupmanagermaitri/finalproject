@@ -106,3 +106,19 @@ int main()
 }
 Edit & Run
 return 0;
+ return sum;
+}
+
+// Driver Code
+int main()
+{
+    int arr[] = { 10, 20, 20, 10, 40, 40, 10 };
+
+    int N = sizeof(arr) / sizeof(arr[0]);
+
+    cout << findSum(arr, N);
+
+    return 0;
+    return 0;
+}
+

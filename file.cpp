@@ -604,3 +604,90 @@ void main()
 	getch();
 }return 0;
 }
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a, b, c, big;
+	cout<<"Enter three numbers : ";
+	cin>>a>>b>>c;
+	//let a is the biggest
+	big=a;
+	if(big<b)
+	{
+		if(b>c)
+		{
+			big=b;
+		}
+		else
+		{
+			big=c;
+		}
+	}
+	else if(big<c)
+	{
+		if(c>b)
+		{
+			big=c;
+		}
+		else
+		{
+			big=b;
+			big=b;
+		}
+	}
+	else
+	{
+		big=a;
+	}
+	cout<<"Biggest number is "<<big;
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int num, rem, orig, rev=0;
+	cout<<"Enter a number : ";
+	cin>>num;
+	orig=num;
+	while(num!=0)
+	{
+		rem=num%10;
+		rev=rev*10 + rem;
+		num=num/10;
+	}
+	if(rev==orig)  // check if original number is equal to its reverse
+	{
+		cout<<"Palindrome";
+	}
+	else
+	{
+		cout<<"Not Palindrome";
+	}
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a, b, temp;
+	cout<<"Enter value of A and B : \n";
+	cout<<"A = ";
+	cin>>a;
+	cout<<"B = ";
+	cin>>b;
+	temp=a;
+	a=b;
+	b=temp;
+	cout<<"Number interchanged successfully..!!\n";
+	cout<<"A = "<<a<<"\n"<<"B = "<<b;
+	getch();
+}return 0;
+}
+

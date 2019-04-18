@@ -278,3 +278,121 @@ void main()
 	cout<<"LCM = "<<lcm<<"\n";
 	getch();
 }
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int i, n, sum=0, num;
+	cout<<"How many number you want to enter and add them ?";
+	cin>>n;
+	cout<<"Enter "<<n<<" number :";
+	for(i=0;i<n;i++)
+	{
+		cin>>num;
+		sum=sum+num;
+	}
+	cout<<"Sum of all the "<<n<<" number is "<<sum;
+	getch();
+}
+#include <bits/stdc++.h>
+using namespace std;
+
+// Returns length of maximum length subsequence
+int findSubsequence(int arr[], int n)
+{
+
+    // To store the length of the
+    // maximum length subsequence
+    int len = 1;
+
+    // To store current element arr[i]
+    int tmp;
+
+    int i, j, d;
+
+    // To store the length of the sub-sequence
+    // ending at index i and having common digit d
+    int dp[n][10];
+
+    memset(dp, 0, sizeof(dp));
+
+    // To store digits present in current element
+    int cnt[10];
+
+    // To store length of maximum length subsequence
+    // ending at index i
+    int locMax;
+    tmp = arr[0];
+    while (tmp > 0) {
+        dp[0][tmp % 10] = 1;
+        tmp /= 10;
+    }
+
+    // Find digits of each element, then find length
+    // of subsequence for each digit and then find
+    // local maximum
+    for (i = 1; i < n; i++) {
+        tmp = arr[i];
+        locMax = 1;
+        memset(cnt, 0, sizeof(cnt));
+
+        // Find digits in current element
+        while (tmp > 0) {
+            cnt[tmp % 10] = 1;
+            tmp /= 10;
+        }
+
+        // For each digit present find length of
+        // subsequence and find local maximum
+        for (d = 0; d <= 9; d++) {
+            if (cnt[d]) {
+                dp[i][d] = 1;
+                for (j = 0; j < i; j++) {
+                    dp[i][d] = max(dp[i][d], dp[j][d] + 1);
+                    locMax = max(dp[i][d], locMax);
+                }   }
+        }
+
+        // Update value of dp[i][d] for each digit
+        // present in current element to local maximum
+        // found.
+        for (d = 0; d <= 9; d++) {
+            if (cnt[d]) {
+                dp[i][d] = locMax;
+            }
+        }
+
+        // Update maximum length with local maximum
+        len = max(len, locMax);
+    }
+
+    return len;
+}
+
+// Driver code
+int main()
+{
+    int arr[] = { 1, 12, 44, 29, 33, 96, 89 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    cout << findSubsequence(arr, n);
+
+    return 0;
+} #include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int num, rev=0, rem;
+	cout<<"Enter a number : ";
+	cin>>num;
+	while(num!=0)
+	{
+		rem=num%10;
+		rev=rev*10+rem;
+		num=num/10;
+	}
+	cout<<"Reverse = "<<rev;
+	getch();
+}

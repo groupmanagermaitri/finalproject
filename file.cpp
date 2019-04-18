@@ -541,4 +541,66 @@ void main()
 	getch();
 }return 0;
 }
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int a, b, res;
+	cout<<"Enter two number :";
+	cin>>a>>b;
+	res=a+b;
+	cout<<"\nAddition = "<<res;
+	res=a-b;
+	cout<<"\nSubtraction = "<<res;
+	res=a*b;
+	cout<<"\nMultiplication = "<<res;
+	res=a/b;
+	cout<<"\nDivision = "<<res;
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int yr;
+	cout<<"Enter year :";
+	cin>>yr;
+	if((yr%4==0) && (yr%100!=0))
+	{
+		cout<<"This is a Leap Year";
+	}
+	else if((yr%100==0) && (yr%400==0))
+	{
+		cout<<"This is a Leap Year";
+	}
+	else if(yr%400==0)
+	{
+		cout<<"This is a Leap Year";
+	}
+	else
+	{
+		cout<<"This is not a Leap Year";
+	}
+	getch();
+}return 0;
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int num, i, tab;
+	cout<<"Enter a number : ";
+	cin>>num;
+	cout<<"Table of "<<num<<" is \n\n";
+	for(i=1; i<=10; i++)
+	{
+		tab=num*i;
+		cout<<num<<" * "<<i<<" = "<<tab<<"\n";
+	}
+	getch();
+}return 0;
 }

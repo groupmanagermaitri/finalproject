@@ -485,4 +485,60 @@ void main()
 	cout<<"Biggest number is "<<big;
 	getch();
 }return 0;
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	float r, area, circum;
+	cout<<"Enter the radius of the circle :";
+	cin>>r;
+	area=3.14*r*r;
+	circum=2*3.14*r;
+	cout<<"Area of the circle = "<<area<<"\nCircumference of the circle = "<<circum<<"\n";
+	getch();
+}
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	int start, end, i, j, count=0;
+	// to print all the prime number between any range
+	// enter the two number (starting and ending)
+	cout<<"Enter starting number : ";
+	cin>>start;
+	cout<<"Enter ending number : ";
+	cin>>end;
+	cout<<"Prime Number Between "<<start<<" and "<<end<<" is :\n";
+	for(i=start; i<=end; i++)
+	{
+		count=0;
+		for(j=2; j<i; j++)
+		{
+			if(i%j==0)
+			{
+				count++;
+			}
+		if(count==0)
+		{
+			cout<<i<<" ";
+		}
+	}
+	getch();
+}return0;
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+	clrscr();
+	float fah, cel;
+	cout<<"Enter temperature in Fahrenheit : ";
+	cin>>fah;
+	cel=(fah-32) / 1.8;
+	cout<<"Temperature in Celsius = "<<cel;
+	getch();
+}return 0;
+}
 }

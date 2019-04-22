@@ -528,3 +528,406 @@ void myname()
         cout << endl << endl << endl;
 
         return;}
+  {
+float hw, part, hwp; float total=0;
+cout << " Scores are: ";
+for(int i=1; i <= 11; i++)
+{
+infile >> hw; 
+infile >> part;
+hwp = hw + part;
+cout << hwp << endl;
+}
+return total;
+}
+
+//score on the tests, maximum 50.
+float compute_tests(float tests, istream& infile)
+{
+
+infile >> tests;
+cout << " tests are " << tests << endl;
+return 0.0;
+} 
+
+
+
+float hwp, tests;
+//homework and participation + tests, maximum 100.
+float compute_totalscore(float totalscore) 
+{
+totalscore = hwp + tests; 
+cout << " Total score is " << totalscore << endl;
+return 0.0;
+}
+
+
+
+
+if (totalscore >= 90)
+{
+
+cout << "A" << endl; }
+else
+{
+
+if (totalscore >= 80)
+{
+
+cout << "B" << endl; }
+else
+{
+
+if (totalscore >= 70)
+{
+
+cout << "C" << endl; }
+else
+{
+
+if (totalscore >= 60)
+{
+
+cout << "D" << endl; }
+else
+{
+
+if (totalscore < 60)
+{
+
+cout << "F" << endl; }
+}
+}
+}
+}
+
+
+
+void printRecord (char name[20], char Id[8], float hwp, float tests, float totalscore, float grade, ostream& outfile)
+{
+outfile << "Name: "<< name << endl
+<< "Id: "<< Id << endl
+<< "Homework/Participation: " << hwp << endl
+<< "Tests: " << tests << endl
+<< "Total course score: " << totalscore << endl
+<< "Letter Grade: " << grade << endl 
+<<"-------------------------------------------------"<<endl<< endl;
+}
+
+int main()
+{
+ofstream outfile;
+ifstream infile; 
+
+
+char file_name[21], name[20], Id[20];
+
+float hwp, tests, totalscore;
+int deductions;
+
+cout << "Please enter name of input file: ";
+cin >> file_name;
+infile.open(file_name);
+if ( !infile)
+{
+// abandons operation with error mesg
+cout << "Could not open input file \n";
+return 0;
+}
+
+
+outfile.open("ScoreResult");
+if ( !outfile)
+{
+cout << "Could not open output file \n";
+return 0;
+}
+
+
+infile >> name; 
+while(!infile.eof())
+{
+infile >> Id;
+cout << name << " " << Id << endl;
+hwp = compute_hw_participation(infile);
+tests = compute_tests(tests, infile);
+totalscore = compute_totalscore(totalscore, infile);
+// grade
+printRecord(name, Id, hwp, tests, totalscore, outfile);
+infile >> name; 
+}
+
+return 0;
+}
+
+{
+float hw, part, hwp; float total=0;
+cout << " Scores are: ";
+for(int i=1; i <= 11; i++)
+{
+infile >> hw; 
+infile >> part;
+hwp = hw + part;
+cout << hwp << endl;
+}
+return total;
+}
+
+//score on the tests, maximum 50.
+float compute_tests(float tests, istream& infile)
+{
+
+infile >> tests;
+cout << " tests are " << tests << endl;
+return 0.0;
+} 
+
+
+
+float hwp, tests;
+//homework and participation + tests, maximum 100.
+float compute_totalscore(float totalscore) 
+{
+totalscore = hwp + tests; 
+cout << " Total score is " << totalscore << endl;
+return 0.0;
+}
+
+
+
+
+if (totalscore >= 90)
+{
+
+cout << "A" << endl; }
+else
+{
+
+if (totalscore >= 80)
+{
+
+cout << "B" << endl; }
+else
+{
+
+if (totalscore >= 70)
+{
+
+cout << "C" << endl; }
+else
+{
+
+if (totalscore >= 60)
+{
+
+cout << "D" << endl; }
+else
+{
+
+if (totalscore < 60)
+{
+
+cout << "F" << endl; }
+}
+}
+}
+}
+
+
+
+void printRecord (char name[20], char Id[8], float hwp, float tests, float totalscore, float grade, ostream& outfile)
+{
+outfile << "Name: "<< name << endl
+<< "Id: "<< Id << endl
+<< "Homework/Participation: " << hwp << endl
+<< "Tests: " << tests << endl
+<< "Total course score: " << totalscore << endl
+<< "Letter Grade: " << grade << endl 
+<<"-------------------------------------------------"<<endl<< endl;
+}
+
+int main()
+{
+ofstream outfile;
+ifstream infile; 
+
+
+char file_name[21], name[20], Id[20];
+
+float hwp, tests, totalscore;
+int deductions;
+
+cout << "Please enter name of input file: ";
+cin >> file_name;
+infile.open(file_name);
+if ( !infile)
+{
+// abandons operation with error mesg
+cout << "Could not open input file \n";
+return 0;
+}
+
+
+outfile.open("ScoreResult");
+if ( !outfile)
+{
+cout << "Could not open output file \n";
+return 0;
+}
+
+
+infile >> name; 
+while(!infile.eof())
+{
+infile >> Id;
+cout << name << " " << Id << endl;
+hwp = compute_hw_participation(infile);
+tests = compute_tests(tests, infile);
+totalscore = compute_totalscore(totalscore, infile);
+// grade
+printRecord(name, Id, hwp, tests, totalscore, outfile);
+infile >> name; 
+}
+
+return 0;
+}
+
+lass Graph
+{
+        int V; // No. of vertices
+        list<int> *adj; // Pointer to an array containing adjacency lists
+        bool isCyclicUtil(int v, bool visited[], int parent);
+    public:
+        Graph(int V); // Constructor
+        void addEdge(int v, int w); // to add an edge to graph
+        bool isCyclic(); // returns true if there is a cycle
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int> [V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+    adj[w].push_back(v); // Add v to w’s list.
+}
+ 
+// A recursive function that uses visited[] and parent to detect
+// cycle in subgraph reachable from vertex v.
+bool Graph::isCyclicUtil(int v, bool visited[], int parent)
+{
+    // Mark the current node as visited
+    visited[v] = true;
+ 
+    // Recur for all the vertices adjacent to this vertex
+    list<int>::iterator i;
+    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+    {
+        // If an adjacent is not visited, then recur for that adjacent
+        if (!visited[*i])
+        {
+            if (isCyclicUtil(*i, visited, v))
+                return true;
+        }
+ 
+        // If an adjacent is visited and not parent of current vertex,
+        // then there is a cycle.
+        else if (*i != parent)
+            return true;
+    }
+    return false;
+}
+ 
+// Returns true if the graph contains a cycle, else false.
+bool Graph::isCyclic()
+{
+    // Mark all the vertices as not visited and not part of recursion
+    // stack
+    bool *visited = new bool[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    // Call the recursive helper function to detect cycle in different
+    // DFS trees
+    for (int u = 0; u < V; u++)
+        if (!visited[u]) // Don't recur for u if it is already visited
+            if (isCyclicUtil(u, visited, -1))
+                return true;
+ 
+    return false;
+}
+ 
+// Driver program to test above functions
+int main()
+{
+    Graph g1(5);
+    g1.addEdge(1, 0);
+  struct node
+{
+    node_info *pt;
+    node *next;
+}*top = NULL, *p = NULL, *np = NULL;
+struct node1
+{
+    node1 *link;
+    node_info *pt1;
+}*head = NULL, *m = NULL, *n = NULL, *np1 = NULL;
+int c = 0;
+bool flag = false;
+void push(node_info *ptr)
+{
+    np = new node;
+    np->pt = ptr;
+    np->next = NULL;
+    if (top == NULL)
+    {
+        top = np;
+    }
+    else
+    {
+        np->next = top;
+        top = np;
+    }
+}
+node_info *pop()
+{
+    if (top == NULL)
+    {
+        cout<<"underflow\n";
+    }
+    else
+    {
+        p = top;
+        top = top->next;
+        return(p->pt);
+        delete(p);
+    }
+}
+void store(node_info *ptr1)
+{
+    np1 = new node1;
+    np1->pt1 = ptr1;
+    np1->link = NULL;
+    if (c == 0)
+    {
+        head = np1;
+        m = head;
+        m->link = NULL;
+      g1.addEdge(0, 2);
+    g1.addEdge(2, 0);
+    g1.addEdge(0, 3);
+    g1.addEdge(3, 4);
+    g1.isCyclic() ? cout << "Undirected Graph isn't a tree\n" : cout
+            << "Undirected Graph is a tree\n";
+ 
+    Graph g2(3);
+    g2.addEdge(0, 1);
+    g2.addEdge(1, 2);
+    g2.isCyclic() ? cout << "Undirected Graph isn't a tree\n" : cout
+            << "Undirected Graph is a tree\n";
+ 
+    return 0;
+}

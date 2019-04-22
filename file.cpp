@@ -413,5 +413,64 @@ int main()
 
 
         return 0;
+}int beerORliqour(int answer)
+{
+        cout << "Enter 1 for beer. Enter 2 for everything else. ";
+        cin >> answer;          // input 1 for beer, 2 for anything else
+        cout << endl;
+
+        return(answer);         // returns user input to main. is called "yn" in main function
 }
+float mlTOoz(float v, int beeryn)
+{
+        char convertyn;                 // need help converting, y or n;
+        float mL;                       // user input milliliters
+
+        cout << "Volume input must be in ounces. Do you ";
+        cout << "need help converting from milliliters ";
+        cout << "to Oz? (Y or N) ";
+        cin >> convertyn;
+        cout << endl;
+
+        switch (convertyn)
+        {
+                case 'Y': case 'y':
+                        if (beeryn == 1)
+                        cout << "Enter the volume of one can of beer: ";
+                        else if (beeryn == 2)
+                        cout << "Enter the volume: ";
+
+                        cin >> mL;
+                        cout << endl;
+                        
+                        v = mL * 0.0338140226;
+                        cout << mL << " milliliters is equal to " << v << " ounces." << endl;
+                break;
+                case 'N': case 'n':
+                v = 0;                  // if no need to convert mL to Oz, volume remains
+                                        // '0' for now. Will be changed with next function
+        }
+
+
+
+        return(v);                      // return v to main. is called "volume" in main function"
+}
+float containerVolume(float v, int beeryn, int beerc)
+{
+        float oz;                       // local float used for calculating volume
+        if (beeryn == 1)                // run if beer
+        {
+        cout << "Enter the volume of one can of beer: ";
+        cin >> oz;
+        cout << endl;
+        v = oz * beerc;                 // Oz must be multiplied by # cans in case to get total volume
+        }
+        else if (beeryn == 2)           // run if other
+        {
+        cout << "Enter the volume in ounces: ";
+        cin >> v;
+        cout << endl;
+        }
+
+        return(v);
 }

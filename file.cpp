@@ -1,3 +1,76 @@
+
+using namespace std; 
+  
+typedef long long LL; 
+typedef pair<int, int> pii; 
+typedef pair<LL, LL> pll; 
+typedef pair<string, string> pss; 
+typedef vector<int> vi; 
+typedef vector<vi> vvi; 
+typedef vector<pii> vii; 
+typedef vector<LL> vl; 
+typedef vector<vl> vvl; 
+  
+double EPS = 1e-9; 
+int INF = 1000000005; 
+long long INFF = 1000000000000000005LL; 
+double PI = acos(-1); 
+int dirx[8] = { -1, 0, 0, 1, -1, -1, 1, 1 }; 
+int diry[8] = { 0, 1, -1, 0, -1, 1, -1, 1 }; 
+  
+#ifdef TESTING 
+#define DEBUG fprintf(stderr, "====TESTING====\n") 
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl 
+#define debug(...) fprintf(stderr, __VA_ARGS__) 
+#else 
+#define DEBUG 
+#define VALUE(x) 
+#define debug(...) 
+#endif 
+  
+#define FOR(a, b, c) for (int(a) = (b); (a) < (c); ++(a)) 
+#define FORN(a, b, c) for (int(a) = (b); (a) <= (c); ++(a)) 
+#define FORD(a, b, c) for (int(a) = (b); (a) >= (c); --(a)) 
+#define FORSQ(a, b, c) for (int(a) = (b); (a) * (a) <= (c); ++(a)) 
+#define FORC(a, b, c) for (char(a) = (b); (a) <= (c); ++(a)) 
+#define FOREACH(a, b) for (auto&(a) : (b)) 
+#define REP(i, n) FOR(i, 0, n) 
+#define REPN(i, n) FORN(i, 1, n) 
+#define MAX(a, b) a = max(a, b) 
+#define MIN(a, b) a = min(a, b) 
+#define SQR(x) ((LL)(x) * (x)) 
+#define RESET(a, b) memset(a, b, sizeof(a)) 
+#define fi first 
+#define se second 
+#define mp make_pair 
+#define pb push_back 
+#define ALL(v) v.begin(), v.end() 
+#define ALLA(arr, sz) arr, arr + sz 
+#define SIZE(v) (int)v.size() 
+#define SORT(v) sort(ALL(v)) 
+#define REVERSE(v) reverse(ALL(v)) 
+#define SORTA(arr, sz) sort(ALLA(arr, sz)) 
+#define REVERSEA(arr, sz) reverse(ALLA(arr, sz)) 
+#define PERMUTE next_permutation 
+#define TC(t) while (t--) 
+  
+inline string IntToString(LL a) 
+{ 
+    char x[100]; 
+    sprintf(x, "%lld", a); 
+    string s = x; 
+    return s; 
+} 
+  
+inline LL StringToInt(string a) 
+{ 
+    char x[100]; 
+    LL res; 
+    strcpy(x, a.c_str()); 
+    sscanf(x, "%lld", &res); 
+    return res; 
+} 
+=======
 #include <iostream>
 using namespace std;
 int main(){
@@ -14,50 +87,70 @@ int main(){
    return 0;
    #include <iostream>
 using namespace std;
-
+     
 void Store(){
-
+     
      cout << "The Item store is not finished yet\n" << endl;
-
+     
+     int Mainmenu();
+     Mainmenu();
+     
+     }
+     
+void Character(){
+     
+     int PlayerHp, PlayerStr, PlayerMana;
+     
+     cout << "Your character has:\n\n";
+               
+     cout << PlayerHp << " Health" << endl;
+     cout << PlayerStr << " Strength" << endl;
+     cout << PlayerMana << " Mana" << endl;
+     
+     cout << endl;
+     
+     int Mainmenu();
+     Mainmenu();
+     }
+     
+void Inventory(){
+     
+     cout << "Your inventory contains:\n" << endl;
+     
      int Mainmenu();
      Mainmenu();
 
      }
-
-void Character(){
-
-     }
-
-void Inventory(){
-
-     cout << "Your inventory cont
-      cout << "You search the Jungle and find:\n" << endl;
-
+     
+void Wilderness(){
+     
+     cout << "You search the Jungle and find:\n" << endl;
+     
      string Creatures[10];
-
+     
      Creatures[0] = "1";
      Creatures[1] = "2";
      Creatures[2] = "3";
      Creatures[3] = "4";
-
+     
      cout << Creatures << " Is really dangerous " << endl;
-
+     
      int Mainmenu();
      Mainmenu();
      }
 
 void Mainmenu(){
-
+     
      string choice;
-
+     
      cout << "1: Attack creature" << endl;
      cout << "2: Buy equipment" << endl;
      cout << "3: Inventory" << endl;
      cout << "4: Stats" << endl;
-
+          
           // invalid option returns to this
           InvalidOption:
-
+                      
      cin >> choice;
      if (choice == "1"){
                 Wilderness ();
@@ -75,9 +168,9 @@ void Mainmenu(){
           cout << "You have not chosen a valid option" << endl;
           goto InvalidOption;
      }
+                     
 
-
-
+     
      }
 
 int main()
@@ -85,386 +178,180 @@ int main()
     int PlayerHp = 100, PlayerStr = 20, PlayerMana = 50;
     Mainmenu ();
 }
-Edit & Run
-return 0;
- return sum;
-}
 
-// Driver Code
-int main()
-{
-    int arr[] = { 10, 20, 20, 10, 40, 40, 10 };
 
-    int N = sizeof(arr) / sizeof(arr[0]);
-
-    cout << findSum(arr, N);
-
-    return 0;
-    return 0;
-}
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int mark[5], i;
-	float sum=0;
-	cout<<"Enter marks obtained in Physics, Chemistry, Maths, CS, English :";
-	for(i=0; i<5; i++)
-	{
-		cin>>mark[i];
-		sum=sum+mark[i];
-	}
-	float avg=sum/5;
-	float perc;
-	perc=(sum/500)*100;
-	cout<<"Average Marks = "<<avg;
-	cout<<"\nPercentage = "<<perc<<"%";
-	getch();
-}
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int n, i, arr[50], sum=0;
-	cout<<"How many number you want to enter ?\n";
-	cin>>n;
-	cout<<"Enter "<<n<<" Numbers :";
-	for(i=0; i<n; i++)
-	{
-		cin>>arr[i];
-		sum=sum+arr[i];
-	}
-	int armean=sum/n;
-	cout<<"Arithmetic Mean = "<<armean;
-	getch();
-}
-#include<iostream.h>
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-void main()
-{
-	clrscr();
-	float a, b, res;
-	char choice, ch;
-	do
-	{
-		cout<<"1.Addition\n";
-		cout<<"2.Subtraction\n";
-		cout<<"3.Multiplication\n";
-		cout<<"4.Division\n";
-		cout<<"5.Exit\n\n";
-		cout<<"Enter Your Choice : ";
-		cin>>choice;
-		switch(choice)
-		{
-			case '1' : cout<<"Enter two number : ";
-				cin>>a>>b;
-				res=a+b;
-				cout<<"Result = "<<res;
-				break;
-			case '2' : cout<<"Enter two number : ";
-				cin>>a>>b;
-				res=a-b;
-				cout<<"Result = "<<res;
-				break;
-			case '3' : cout<<"Enter two number : ";
-				cin>>a>>b;
-				res=a*b;
-				cout<<"Result = "<<res;
-				break;
-			case '4' : cout<<"Enter two number : ";
-				cin>>a>>b;
-				res=a/b;
-				cout<<"Result = "<<res;
-				break;
-			case '5' : exit(0);
-				break;
-			default : cout<<"Wrong Choice..!!";
-				break;
-		}
-		cout<<"\n------------------------------------\n";
-	}while(choice!=5 && choice!=getchar());
-	getch();
-
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int len, bre, peri, area;
-	cout<<"Enter length and breadth of the rectangle :";
-	cin>>len>>bre;
-	area=len*bre;
-	peri=(2*len)+(2*bre);
-	cout<<"Area = "<<area<<"\tPerimeter="<<peri;
-	getch();
-}
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int mark[5], i;
-	float sum=0,avg;
-	cout<<"Enter marks obtained in 5 subjects :";
-	for(i=0; i<5; i++)
-	{
-		cin>>mark[i];
-		sum=sum+mark[i];
-	}
-	avg=sum/5;
-	cout<<"Your Grade is ";
-	if(avg>80)
-	{
-		cout<<"A";
-	}
-	else if(avg>60 && avg<=80)
-	{
-		cout<<"B";
-	}
-	else if(avg>40 && avg<=60)
-	{
-		cout<<"C";
-	}
-	else
-	{
-		cout<<"D";
-	}
-	getch();
-}
-return 0;
-}
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int a, b, x, y, t, hcf, lcm;
-	cout<<"Enter two number : ";
-	cin>>x>>y;
-	a=x;
-	b=y;
-	while(b!=0)
-	{
-		t=b;
-		b=a%b;
-		a=t;
-	}
-	hcf=a;
-	lcm=(x*y)/hcf;
-	cout<<"HCF = "<<hcf<<"\n"
-	cout<<"LCM = "<<lcm<<"\n";
-	getch();
-}
-#include<iostream.h>
-#include<conio.h>
-void main()
-{
-	clrscr();
-	int i, n, sum=0, num;
-	cout<<"How many number you want to enter and add them ?";
-	cin>>n;
-	cout<<"Enter "<<n<<" number :";
 #include <iostream>
-
-#include <vector>
-
-#include <string>
-
-#include <cstdlib>
-
 using namespace std;
 
-int main()
 
-{
-
-    vector<int> ss;
-
-    vector<int>::iterator it;
-
-    int choice, item;
-
-    while (1)
-
-    {
-
-        cout<<"\n---------------------"<<endl;
-
-        cout<<"Vector Implementation in Stl"<<endl;
-
-        cout<<"\n---------------------"<<endl;
-
-        cout<<"1.Insert Element into the Vector"<<endl;
-
-        cout<<"2.Delete Last Element of the Vector"<<endl;
-
-        cout<<"3.Size of the Vector"<<endl;
-
-        cout<<"4.Display by Index"<<endl;
-
-        cout<<"5.Dislplay by Iterator"<<endl;
-
-        cout<<"6.Clear the Vector"<<endl;
-
-        cout<<"7.Exit"<<endl;
-
-        cout<<"Enter your Choice: ";
-
-        cin>>choice;
-
-        switch(choice)
-
-        {
-
-        case 1:
-
-            cout<<"Enter value to be inserted: ";
-            cin>>item;
-	                ss.push_back(item);
-
-            break;
-
-        case 2:
-
-            cout<<"Delete Last Element Inserted:"<<endl;
-
-            ss.pop_back();
-
-            break;
-
-        case 3:
-
-            cout<<"Size of Vector: ";
-
-            cout<<ss.size()<<endl;
-
-            break;
-
-        case 4:
-
-            cout<<"Displaying Vector by Index: ";
-
-            for (int i = 0; i < ss.size(); i++)
-
-            {
-
-                cout<<ss[i]<<" ";
-
-            }
-
-            cout<<endl;
-
-            break;
-
-        case 5:
-
-            cout<<"Displaying Vector by Iterator: ";
-	                for (it = ss.begin(); it != ss.end(); it++)
-
-            {
-
-                cout<<*it<<" ";
-
-            }
-
-            cout<<endl;
-
-            break;
-
-        case 6:
-
-            ss.clear();
-
-            cout<<"Vector Cleared"<<endl;
-
-            break;
-
-        case 7:
-
-            exit(1);
-
-            break;
-
-        default:
-
-            cout<<"Wrong Choice"<<endl
-		    #include <iostream>
-
-#include <vector>
-
-#include <string>
-
-#include <cstdlib>
-
-using namespace std;
+// function prototypes
+void myname();                                  // author info
+int beerORliqour(int);                          // asks if beer or hard a
+float mlTOoz(float, int);                       // converts mL to Oz
+float containerVolume(float, int, int);         // calculate volume
+int beer(int);                                  // calculate total case volume if beer
+void conclusion(float, float, float, int, int); // outputs calculations
 
 int main()
-
 {
+        char convertyn;                 // convert ml to oz? (y or n)
+        float volume;                   // volume of container(s)
+        int yn;                         // beer yes or no (1 or 2)
+        int beercase;                   // number of beers in a case
+        float proof, price;             // user inputs
+        float content, worth;           // calculations
 
-    vector<int> ss;
+        beercase = 0;                   // set beercase and volume to 0, had
+        volume = 0;                     // to do this to get program to work
 
-    vector<int>::iterator it;
 
-    int choice, item;
+        myname();
 
-    while (1)
-
-    {
-
-        cout<<"\n---------------------"<<endl;
-
-        cout<<"Vector Implementation in Stl"<<endl;
-
-        cout<<"\n---------------------"<<endl;
-
-        cout<<"1.Insert Element into the Vector"<<endl;
-
-        cout<<"2.Delete Last Element of the Vector"<<endl;
-
-        cout<<"3.Size of the Vector"<<endl;
-
-        cout<<"4.Display by Index"<<endl;
-
-        cout<<"5.Dislplay by Iterator"<<endl;
-	        cout<<"6.Clear the Vector"<<endl;
-
-        cout<<"7.Exit"<<endl;
-
-        cout<<"Enter your Choice: ";
-
-        cin>>choice;
-
-        switch(choice)
-
+        yn = beerORliqour(yn);          // declare yn for use in other fucntions
+        if (yn == 1)                    // only do if calculating for beer
         {
+        cout << "Enter the number of beers in a case: ";
+        cin >> beercase;                // input # beers in a case
+        cout << endl;
+        }
 
-        case 1:
 
-            cout<<"Enter value to be inserted: ";
+        volume = mlTOoz(volume, yn);    // run function to convert mL to Oz, if wanted.
+                                        // if wanted, output volume. if not, volume
+                                        // remains '0'.
 
-            cin>>item;
+        if (volume == 0)                // only run if volume has not been entered yet
+        volume = containerVolume(volume, yn, beercase);
+                                        // run function to figure out volume.
 
-            ss.push_back(item);
 
-            break;
+        cout << "Enter the proof (2x the listed alcohol content by %volume): ";
+        cin >> proof;                   // user input proof
+        cout << endl;
 
-        case 2:
+        cout << "Enter the price: $";
+        cin >> price;                   // user input price
+        cout << endl;
 
-            cout<<"Delete Last Element Inserted:"<<endl;
 
-            ss.pop_back();
+        conclusion(volume, proof, price, yn, beercase); // conclusion
 
-            break;
 
-        case 3:
+        return 0;
+}
 
-            cout<<"Size of Vector: ";
+int beerORliqour(int answer)
+{
+        cout << "Enter 1 for beer. Enter 2 for everything else. ";
+        cin >> answer;          // input 1 for beer, 2 for anything else
+        cout << endl;
 
-            cout<<ss.size()<<endl;
+        return(answer);         // returns user input to main. is called "yn" in main function
+}
+float mlTOoz(float v, int beeryn)
+{
+        char convertyn;                 // need help converting, y or n;
+        float mL;                       // user input milliliters
 
-            break;
+        cout << "Volume input must be in ounces. Do you ";
+        cout << "need help converting from milliliters ";
+        cout << "to Oz? (Y or N) ";
+        cin >> convertyn;
+        cout << endl;
+
+        switch (convertyn)
+        {
+                case 'Y': case 'y':
+                        if (beeryn == 1)
+                        cout << "Enter the volume of one can of beer: ";
+                        else if (beeryn == 2)
+                        cout << "Enter the volume: ";
+
+                        cin >> mL;
+                        cout << endl;
+                        
+                        v = mL * 0.0338140226;
+                        cout << mL << " milliliters is equal to " << v << " ounces." << endl;
+                break;
+                case 'N': case 'n':
+                v = 0;                  // if no need to convert mL to Oz, volume remains
+                                        // '0' for now. Will be changed with next function
+        }
+
+
+
+        return(v);                      // return v to main. is called "volume" in main function"
+}
+float containerVolume(float v, int beeryn, int beerc)
+{
+        float oz;                       // local float used for calculating volume
+        if (beeryn == 1)                // run if beer
+        {
+        cout << "Enter the volume of one can of beer: ";
+        cin >> oz;
+        cout << endl;
+        v = oz * beerc;                 // Oz must be multiplied by # cans in case to get total volume
+        }
+        else if (beeryn == 2)           // run if other
+        {
+        cout << "Enter the volume in ounces: ";
+        cin >> v;
+        cout << endl;
+        }
+
+        return(v);
+}
+void conclusion(float v, float prf, float prc, int beeryn, int cb)
+{
+        float costcan;                  // cost of one can of beer
+        float contcan;                  // alcohol content of one can of beer
+        float c;                        // content
+        float w;                        // worth
+
+        c = ((v) * ((prf) / 200));      // content = volume * (proof / 200)
+                                        // units of Oz pure alcohol content
+        w = ((prc) / (c));              // worth = price / content
+                                        // units of $ per ounce of pure alcohol
+
+        costcan = ((prc) / (cb));       // cost per can = price / # beers in case
+        contcan = ((v) / (cb)) * ((prf) / 200); // contents of can = (volume / # beers in case) * (proof /200)
+
+        cout << "beeryn is " << beeryn << endl;
+
+        if (beeryn == 1)
+        {
+                cout << "There are " << c << " total ounces of pure alcohol present, ";
+                cout << "which you are paying for at a rate of $" << w;
+                cout << " per ounce of pure alcohol." << endl;
+                cout << "Each can costs approximately $" << costcan << endl;
+                cout << "Each can contains approximately " << contcan;
+                cout << " ounces of pure alcohol" << endl;
+        }
+        if (beeryn == 2)
+        {
+                cout << "There are " << c << " total ounces of pure alcohol present, ";
+                cout << "which you are paying for at a rate of $" << w;
+                cout << " per ounce of pure alcohol." << endl;
+                if (w < 1)
+                cout << "WOW!!! That's cheap!" << endl;         // nested if statement
+        }
+}
+void myname()
+{
+        cout << endl << endl << endl;
+        cout << "***********************************************************" << endl;
+        cout << "* This program calculates how much you are paying for an  *" << endl;
+        cout << "* ounce of pure alcohol when you buy booze. This can be   *" << endl;
+        cout << "* used as an effective way of comparing the value of one  *" << endl;
+        cout << "* spirit versus another. Have fun and drink responsibly!  *" << endl;
+        cout << "***********************************************************" << endl;
+        cout << endl;
+        cout << "          **************************************" << endl;
+        cout << "          *              Created by            *" << endl;
+        cout << "          *           Samuel xxxxxxxxx         *" << endl;
+        cout << "          *   xxxxxxxxxxxx@xxxxxxxxxxxxxx.edu  *" << endl;
+        cout << "          **************************************" << endl;
+        cout << endl << endl << endl;
+
+        return;
+}

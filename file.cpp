@@ -473,4 +473,58 @@ float containerVolume(float v, int beeryn, int beerc)
         }
 
         return(v);
+
+
+void conclusion(float v, float prf, float prc, int beeryn, int cb)
+{
+        float costcan;                  // cost of one can of beer
+        float contcan;                  // alcohol content of one can of beer
+        float c;                        // content
+        float w;                        // worth
+
+        c = ((v) * ((prf) / 200));      // content = volume * (proof / 200)
+                                        // units of Oz pure alcohol content
+        w = ((prc) / (c));              // worth = price / content
+                                        // units of $ per ounce of pure alcohol
+
+        costcan = ((prc) / (cb));       // cost per can = price / # beers in case
+        contcan = ((v) / (cb)) * ((prf) / 200); // contents of can = (volume / # beers in case) * (proof /200)
+
+        cout << "beeryn is " << beeryn << endl;
+
+        if (beeryn == 1)
+        {
+                cout << "There are " << c << " total ounces of pure alcohol present, ";
+                cout << "which you are paying for at a rate of $" << w;
+                cout << " per ounce of pure alcohol." << endl;
+                cout << "Each can costs approximately $" << costcan << endl;
+                cout << "Each can contains approximately " << contcan;
+                cout << " ounces of pure alcohol" << endl;
+        }
+        if (beeryn == 2)
+        {
+                cout << "There are " << c << " total ounces of pure alcohol present, ";
+                cout << "which you are paying for at a rate of $" << w;
+                cout << " per ounce of pure alcohol." << endl;
+                if (w < 1)
+                cout << "WOW!!! That's cheap!" << endl;         // nested if statement
+        }
 }
+void myname()
+{
+        cout << endl << endl << endl;
+        cout << "***********************************************************" << endl;
+        cout << "* This program calculates how much you are paying for an  *" << endl;
+        cout << "* ounce of pure alcohol when you buy booze. This can be   *" << endl;
+        cout << "* used as an effective way of comparing the value of one  *" << endl;
+        cout << "* spirit versus another. Have fun and drink responsibly!  *" << endl;
+        cout << "***********************************************************" << endl;
+        cout << endl;
+        cout << "          **************************************" << endl;
+        cout << "          *              Created by            *" << endl;
+        cout << "          *           Samuel xxxxxxxxx         *" << endl;
+        cout << "          *   xxxxxxxxxxxx@xxxxxxxxxxxxxx.edu  *" << endl;
+        cout << "          **************************************" << endl;
+        cout << endl << endl << endl;
+
+        return;}

@@ -354,4 +354,64 @@ void myname()
         cout << endl << endl << endl;
 
         return;
+
+#include <stdio.h>
+using namespace std;
+
+
+// function prototypes
+void myname();                                  // author info
+int beerORliqour(int);                          // asks if beer or hard a
+float mlTOoz(float, int);                       // converts mL to Oz
+float containerVolume(float, int, int);         // calculate volume
+int beer(int);                                  // calculate total case volume if beer
+void conclusion(float, float, float, int, int); // outputs calculations
+
+int main()
+{
+        char convertyn;                 // convert ml to oz? (y or n)
+        float volume;                   // volume of container(s)
+        int yn;                         // beer yes or no (1 or 2)
+        int beercase;                   // number of beers in a case
+        float proof, price;             // user inputs
+        float content, worth;           // calculations
+
+        beercase = 0;                   // set beercase and volume to 0, had
+        volume = 0;                     // to do this to get program to work
+
+
+        myname();
+
+        yn = beerORliqour(yn);          // declare yn for use in other fucntions
+        if (yn == 1)                    // only do if calculating for beer
+        {
+        cout << "Enter the number of beers in a case: ";
+        cin >> beercase;                // input # beers in a case
+        cout << endl;
+        }
+
+
+        volume = mlTOoz(volume, yn);    // run function to convert mL to Oz, if wanted.
+                                        // if wanted, output volume. if not, volume
+                                        // remains '0'.
+
+        if (volume == 0)                // only run if volume has not been entered yet
+        volume = containerVolume(volume, yn, beercase);
+                                        // run function to figure out volume.
+
+
+        cout << "Enter the proof (2x the listed alcohol content by %volume): ";
+        cin >> proof;                   // user input proof
+        cout << endl;
+
+        cout << "Enter the price: $";
+        cin >> price;                   // user input price
+        cout << endl;
+
+
+        conclusion(volume, proof, price, yn, beercase); // conclusion
+
+
+        return 0;
+}
 }

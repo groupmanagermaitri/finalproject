@@ -431,3 +431,40 @@ int main()
         cout<<"4.Display by Index"<<endl;
 
         cout<<"5.Dislplay by Iterator"<<endl;
+	        cout<<"6.Clear the Vector"<<endl;
+
+        cout<<"7.Exit"<<endl;
+
+        cout<<"Enter your Choice: ";
+
+        cin>>choice;
+
+        switch(choice)
+
+        {
+
+        case 1:
+
+            cout<<"Enter value to be inserted: ";
+
+            cin>>item;
+
+            ss.push_back(item);
+
+            break;
+
+        case 2:
+
+            cout<<"Delete Last Element Inserted:"<<endl;
+
+            ss.pop_back();
+
+            break;
+
+        case 3:
+
+            cout<<"Size of Vector: ";
+
+            cout<<ss.size()<<endl;
+
+            break;

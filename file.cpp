@@ -931,3 +931,70 @@ void store(node_info *ptr1)
  
     return 0;
 }
+  void remove(int x)
+{
+    m = head;
+    if ((m->pt1)->no == x)
+    {
+        head = head->link;
+        delete(m);
+    }
+    else
+    {
+        while ((m->pt1)->no != x && m->link != NULL)
+        {
+            n = m;
+            m = m->link;
+        }
+        if ((m->pt1)->no == x)
+        {
+            n->link = m->link;
+            delete(m);
+        }
+        else if (m->link == NULL)
+        {
+            flag = true;
+            cout<<"Cycles do not exist in graph\n";
+        }
+    }
+}            
+void topo(int *v, int am[][5], int i)
+{
+    q = new node_info;
+    q->no = i;
+    q->st_time = c;
+    push(q);
+    v[i] = 1;
+    for (int j = 0; j < 5; j++)
+    {
+        if (am[i][j] == 0  || (am[i][j] == 1 && v[j] == 1))
+            continue;
+        else if(am[i][j] == 1 && v[j] == 0)
+        {
+            c++;
+            topo(v,am,j);
+        }
+    }
+    c++;
+    q = pop();
+    q->lv_time = c;
+    store(q);
+    return;
+}
+void topo1(int *v, int am[][5], int i)
+{
+    v[i] = 1;
+    remove(i);
+  or (int j = 0; j < 5; j++)
+    {
+        if (am[i][j] == 0  || (am[i][j] == 1 && v[j] == 1))
+        {
+            continue;
+        }
+        else if(am[i][j] == 1 && v[j] == 0)
+        {
+            topo1(v, am, j);
+        }
+    }
+    return;
+}
